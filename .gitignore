@@ -1,0 +1,15 @@
+# Executable files
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Debug files
+*.pdb
+*.ilk
+*.dll
+
+# VS Code local settings
+.vscode/
