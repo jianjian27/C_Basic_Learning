@@ -1,21 +1,45 @@
-
 {
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C: Build active file",
-            "type": "shell",
-            "command": "D:\\mingw64\\bin\\gcc.exe",
+            "label": "C: Prepare build directory",
+            "type": "process",
+            "command": "powershell.exe",
             "args": [
+                "-NoProfile",
+                "-Command",
+                "New-Item -ItemType Directory -Force -Path ./build | Out-Null"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "C: Build active file",
+            "type": "process",
+            "command": "D:/mingw64/bin/gcc.exe",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
                 "-g",
                 "-O0",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "D:/mingw64/bin;${env:PATH}"
+                }
             },
+            "dependsOn": "C: Prepare build directory",
             "problemMatcher": [
                 "$gcc"
             ],

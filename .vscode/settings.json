@@ -1,0 +1,28 @@
+{
+    "C_Cpp.default.compilerPath": "D:/mingw64/bin/gcc.exe",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
+    "C_Cpp.default.configurationProvider": "",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, BreakBeforeBraces: Allman }",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true
+    },
+    "files.encoding": "utf8",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/*.exe": true,
+        "**/*.o": true,
+        "**/*.obj": true,
+        "**/.idea": true,
+        "**/cmake-build-*": true
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/cmake-build-*": true
+    },
+    "cmake.configureOnOpen": false
+}

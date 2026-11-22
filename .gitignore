@@ -11,5 +11,14 @@
 *.ilk
 *.dll
 
-# VS Code local settings
-.vscode/
+# Generated build files and IDE state
+build/
+cmake-build-*/
+.idea/
+
+# Shared VS Code configuration
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
