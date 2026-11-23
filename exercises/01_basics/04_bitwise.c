@@ -27,9 +27,10 @@ int main(void)
     */
 
     // 查看int类型的字节数和位数
-    printf("int bytes = %zu\n", sizeof(int));
+    // 本例大小很小，可转为 unsigned int，兼容当前 MinGW 的格式检查。
+    printf("int bytes = %u\n", (unsigned int)sizeof(int));
     printf("bits per byte = %d\n", CHAR_BIT);
-    printf("int bits = %zu\n", sizeof(int) * CHAR_BIT);
+    printf("int bits = %u\n", (unsigned int)(sizeof(int) * CHAR_BIT));
 
     /*
     要注意 参与运算的类型有多少位。如果写：
@@ -61,7 +62,7 @@ int main(void)
     unsigned int value = 5u;          // 原值： 00000101 → 5
     unsigned int result = value << 1; // 左移： 00001010 → 10
     // 表达式本身不会修改原变量：
-    value << 1;         // 算出了结果，但没有保存
+    // value << 1;      // 算出了结果，但没有保存；直接执行会产生无效果警告
     value = value << 1; // 保存回 value
     value <<= 1;        // 上一行的简写
     printf("value = %u\n", value);
